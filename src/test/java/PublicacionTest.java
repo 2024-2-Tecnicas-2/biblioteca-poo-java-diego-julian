@@ -1,3 +1,4 @@
+import com.mycompany.biblioteca.java.Publicacion;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,4 +17,17 @@ public class PublicacionTest {
 //        int valorActual = miCuenta.multiplicar(3, 5);
 //        assertEquals(valorEsperado, valorActual);
 //    }
+    
+    @Test
+    void testPublicacionAtributos() {
+        Publicacion pub = new Publicacion("Publicacion 1", 2000);
+        assertEquals("Publicacion 1", pub.getTitulo());
+        assertEquals(2000, pub.getAnio());
+    }
+
+    @Test
+    void testPublicacionMostrarInfo() {
+        Publicacion pub = new Publicacion("Publicacion 2", 2010);
+        assertEquals("Título: Publicacion 2\nAño de Publicación: 2010", pub.mostrarInfo());
+    }
 }
